@@ -17,6 +17,8 @@ const DOM = {
     cursor: document.querySelector('.cursor'),
     backCtrl: document.querySelector('.frame__back'),
     navigationItems: document.querySelectorAll('.frame__nav > .frame__nav-button'),
+    slideImages: document.querySelectorAll('.slide__img-inner'),
+    slideQuestion: document.querySelectorAll(".slide_question"),
 };
 // cursor text chars
 DOM.cursorChars = DOM.cursor.querySelectorAll('.word > .char, .whitespace');
@@ -296,3 +298,14 @@ initEvents();
 preloadImages('.slide__img-inner').then( _ => {
 	document.body.classList.remove('loading');
 });
+
+onload = () => {
+    setTimeout(()=>{
+        DOM.slideImages.forEach(slideImg => {
+            slideImg.classList.add("slide__img-grayscale");
+        })
+
+        
+
+    }, 2000);
+};
