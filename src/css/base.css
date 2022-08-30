@@ -244,6 +244,10 @@ a:focus-visible {
 	pointer-events: auto;
 	opacity: 1;
 }
+.slide__small-img{
+	z-index: 100;
+    position: absolute;
+}
 
 .slide_question{
 	z-index: 100;

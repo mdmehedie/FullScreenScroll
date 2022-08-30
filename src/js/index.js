@@ -257,6 +257,13 @@ const initEvents = () => {
         item.addEventListener('click', () => {
             if ( current === position || isAnimating ) return;
             navigate(position);
+            console.log(position);
+            setTimeout(()=>{
+                DOM.slideImages[position].classList.add("slide__img-grayscale");
+        
+                DOM.slideQuestion[position].style.opacity = '1';
+        
+            }, 2000);
         });
     });
 
@@ -301,11 +308,9 @@ preloadImages('.slide__img-inner').then( _ => {
 
 onload = () => {
     setTimeout(()=>{
-        DOM.slideImages.forEach(slideImg => {
-            slideImg.classList.add("slide__img-grayscale");
-        })
+        DOM.slideImages[0].classList.add("slide__img-grayscale");
 
-        
+        DOM.slideQuestion[0].style.opacity = '1';
 
     }, 2000);
 };
