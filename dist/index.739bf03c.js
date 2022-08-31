@@ -575,14 +575,26 @@ const setCurrentSlide = (position)=>{
     current = position;
     slidesArr[current].DOM.el.classList.add("slide--current");
     DOM.navigationItems[current].classList.add("frame__nav-button--current");
+    setTimeout(()=>{
+        DOM.slideImages[current].classList.add("slide__img-grayscale");
+        DOM.slideQuestion[current].style.opacity = "1";
+    }, 2000);
 };
 const next = ()=>{
     const newPosition = current < totalSlides - 1 ? current + 1 : 0;
     navigate(newPosition);
+    setTimeout(()=>{
+        DOM.slideImages[newPosition].classList.add("slide__img-grayscale");
+        DOM.slideQuestion[newPosition].style.opacity = "1";
+    }, 2000);
 };
 const prev = ()=>{
     const newPosition = current > 0 ? current - 1 : totalSlides - 1;
     navigate(newPosition);
+    setTimeout(()=>{
+        DOM.slideImages[newPosition].classList.add("slide__img-grayscale");
+        DOM.slideQuestion[newPosition].style.opacity = "1";
+    }, 2000);
 };
 const navigate = (newPosition)=>{
     isAnimating = true;
@@ -741,7 +753,6 @@ const initEvents = ()=>{
         item.addEventListener("click", ()=>{
             if (current === position || isAnimating) return;
             navigate(position);
-            console.log(position);
             setTimeout(()=>{
                 DOM.slideImages[position].classList.add("slide__img-grayscale");
                 DOM.slideQuestion[position].style.opacity = "1";
