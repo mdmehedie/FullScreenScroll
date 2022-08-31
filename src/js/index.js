@@ -18,7 +18,9 @@ const DOM = {
     backCtrl: document.querySelector('.frame__back'),
     navigationItems: document.querySelectorAll('.frame__nav > .frame__nav-button'),
     slideImages: document.querySelectorAll('.slide__img-inner'),
-    slideQuestion: document.querySelectorAll(".slide_question"),
+    slideQuestion: document.querySelectorAll(".slide__question-part"),
+    slideAns: document.querySelectorAll(".slide__ans-part"),
+    slideRightImg: document.querySelectorAll(".slide__right-img"),
 };
 // cursor text chars
 DOM.cursorChars = DOM.cursor.querySelectorAll('.word > .char, .whitespace');
@@ -325,10 +327,22 @@ preloadImages('.slide__img-inner').then( _ => {
 	document.body.classList.remove('loading');
 });
 
+console.log(DOM.slideRightImg);
+
+DOM.slideRightImg[1].addEventListener('mouseover', ()=>{
+    DOM.slideQuestion[0].style.opacity = '-1';
+    DOM.slideAns[0].style.opacity = '1';
+});
+
+DOM.slideRightImg[1].addEventListener('mouseout', ()=>{
+    DOM.slideQuestion[0].style.opacity = '1';
+    DOM.slideAns[0].style.opacity = '-1';
+});
+
+
 onload = () => {
     setTimeout(()=>{
         DOM.slideImages[0].classList.add("slide__img-grayscale");
-
         DOM.slideQuestion[0].style.opacity = '1';
 
     }, 2000);

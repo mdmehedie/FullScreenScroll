@@ -243,6 +243,7 @@ a:focus-visible {
 }
 
 .slide__tri-img {
+  grid-template-columns: 100%;
   display: grid;
 }
 
@@ -268,10 +269,25 @@ a:focus-visible {
 
 .slide_question {
   z-index: 100;
-  opacity: -1;
   place-self: end center;
+  font-size: 16px;
   position: absolute;
   bottom: 7rem;
+}
+
+.slide__qaOpacity-part {
+  opacity: 1;
+}
+
+.slide__question-part {
+  opacity: -1;
+  transition: all .5s;
+}
+
+.slide__ans-part {
+  opacity: -1;
+  transition: all .5s;
+  transform: translate(0, -100%);
 }
 
 .slide__inner {
