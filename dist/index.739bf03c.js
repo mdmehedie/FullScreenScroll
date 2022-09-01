@@ -552,9 +552,10 @@ const DOM = {
     ],
     cursor: document.querySelector(".cursor"),
     backCtrl: document.querySelector(".frame__back"),
-    navigationItems: document.querySelectorAll(".frame__nav > .menu >.frame__nav-button"),
-    navigationSubmenu: document.querySelectorAll(".frame__nav > .menu > .frame__nav-submenu"),
+    navigationItems: document.querySelectorAll(".frame__nav  >.frame__nav-button"),
+    imagePosition: document.querySelectorAll(".image__position-item"),
     slideImages: document.querySelectorAll(".slide__img-inner"),
+    slideRightImages: document.querySelectorAll(".slide__right"),
     slideQuestion: document.querySelectorAll(".slide__question-part"),
     slideAns: document.querySelectorAll(".slide__ans-part"),
     slideRightImg: document.querySelectorAll(".slide__right-img")
@@ -578,7 +579,6 @@ const setCurrentSlide = (position)=>{
     current = position;
     slidesArr[current].DOM.el.classList.add("slide--current");
     DOM.navigationItems[current].classList.add("frame__nav-button--current");
-    DOM.navigationSubmenu[current].classList.remove("frame__nav-submenu");
     onmousemove = (e)=>{
         let x = e.clientX;
         DOM.slideImages[current].style.filter = `grayscale(${x / innerWidth})`;
@@ -614,8 +614,6 @@ const navigate = (newPosition)=>{
     // change navigation current class
     DOM.navigationItems[current].classList.remove("frame__nav-button--current");
     DOM.navigationItems[newPosition].classList.add("frame__nav-button--current");
-    DOM.navigationSubmenu[current].classList.add("frame__nav-submenu");
-    DOM.navigationSubmenu[newPosition].classList.remove("frame__nav-submenu");
     // navigation direction
     const direction = current < newPosition ? current === 0 && newPosition === totalSlides - 1 ? "prev" : "next" : current === totalSlides - 1 && newPosition === 0 ? "next" : "prev";
     const currentSlide = slidesArr[current];
@@ -824,6 +822,17 @@ onload = ()=>{
         DOM.slideQuestion[0].style.opacity = "1";
     }, 2000);
 };
+DOM.imagePosition.forEach((text, index)=>{
+    let x = 0;
+    text.addEventListener("mouseover", ()=>{
+        x = index;
+        DOM.slideRightImages[0].style.transform = `translate(0, ${x}0%)`;
+    });
+    text.addEventListener("mouseout", ()=>{
+        x = index;
+        DOM.slideRightImages[0].style.transform = `translate(0, ${x}0%)`;
+    });
+});
 
 },{"gsap":"fPSuC","splitting/dist/splitting.css":"3uR7n","splitting/dist/splitting-cells.css":"7jeGL","splitting":"77jB6","./utils":"72Dku","./cursor":"3v1v0","./slide":"a2l79","gsap/Observer.js":"aAWxM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fPSuC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

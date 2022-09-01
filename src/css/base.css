@@ -210,17 +210,6 @@ a:focus-visible {
 	transform: scaleX(1);
 }
 
-.frame__nav-submenu{
-	display: none;
-}
-.frame__nav-submenu--item{
-	list-style: none;
-	padding-left: 2rem;
-}
-.frame__nav-submenu--item > li{
-	margin: 5px 0;
-	transition: .5s ease-in-out;
-}
 .frame__back {
 	grid-area: back;
 	justify-self: start;
@@ -232,6 +221,26 @@ a:focus-visible {
 .frame__back--show {
 	opacity: 1;
 	pointer-events: auto;
+}
+
+.image__position{
+	z-index: 100;
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+	padding: .7rem 2rem;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.1);
+	color: #d1d1d1;
+}
+
+.image__position-item{
+	padding: .5rem 0;
+	cursor: pointer;
+}
+.image__position-item:hover{
+	color: rgb(255, 255, 255);
+	
 }
 
 .slides {
@@ -367,15 +376,36 @@ a:focus-visible {
 	display: block;
 	flex: none;
 } */
+
+.slide__spacification{
+	top: 10%;
+	left: 2%;
+	background-color: rgba(255, 255, 255, 0.1);
+	color: #d1d1d1;
+	position: absolute;
+	z-index: 100;
+	padding: .7rem 2rem;
+	border-radius: 5px;
+}
+.slide__spacification > ul{
+	list-style: none;
+	padding: 0;
+}
+.slide__spacification > ul > li{
+	padding: .5rem 0;
+}
+.slide__spacification > ul > li:hover{
+	color: #fff;
+	
+}
 .slide__right{
 	z-index: 100;
     position: absolute;
 	justify-self: end;
-	align-self: center;
 	display: flex;
 	align-items: center;
+	margin-top: 2rem;
 	margin-right: 3rem;
-	transform: translate(-30%, 0);
 }
 .slide__right-tri{
 	display: grid;
