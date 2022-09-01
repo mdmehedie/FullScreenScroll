@@ -336,10 +336,6 @@ a:focus-visible {
   background-size: cover;
 }
 
-.slide__img-grayscale {
-  filter: grayscale();
-}
-
 .slide__content {
   background: var(--color-bg-slide);
   grid-column-gap: 2rem;

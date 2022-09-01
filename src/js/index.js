@@ -49,13 +49,15 @@ const setCurrentSlide = position => {
 
     current = position;
     slidesArr[current].DOM.el.classList.add('slide--current');
-    console.log(DOM.navigationSubmenu[current]);
     DOM.navigationItems[current].classList.add('frame__nav-button--current');
     DOM.navigationSubmenu[current].classList.remove('frame__nav-submenu');
-    // DOM.navigationSubmenu[current].classList.add('frame__nav-submenu--current');
-    setTimeout(()=>{
-        DOM.slideImages[current].classList.add("slide__img-grayscale");
+    
+    onmousemove = (e) => {
+        let x = e.clientX;
+        DOM.slideImages[current].style.filter = `grayscale(${x/innerWidth})`;
+    }
 
+    setTimeout(()=>{
         DOM.slideQuestion[current].style.opacity = '1';
 
     }, 2000);
@@ -66,9 +68,12 @@ const setCurrentSlide = position => {
 const next = () => {
     const newPosition = current < totalSlides - 1 ? current + 1 : 0;
     navigate(newPosition);
-    setTimeout(()=>{
-        DOM.slideImages[newPosition].classList.add("slide__img-grayscale");
+    onmousemove = (e) => {
+        let x = e.clientX;
+        DOM.slideImages[newPosition].style.filter = `grayscale(${x/innerWidth})`;
+    }
 
+    setTimeout(()=>{
         DOM.slideQuestion[newPosition].style.opacity = '1';
 
     }, 2000);
@@ -78,9 +83,11 @@ const next = () => {
 const prev = () => {
     const newPosition = current > 0 ? current - 1 : totalSlides - 1;
     navigate(newPosition);
+    onmousemove = (e) => {
+        let x = e.clientX;
+        DOM.slideImages[newPosition].style.filter = `grayscale(${x/innerWidth})`;
+    }
     setTimeout(()=>{
-        DOM.slideImages[newPosition].classList.add("slide__img-grayscale");
-
         DOM.slideQuestion[newPosition].style.opacity = '1';
 
     }, 2000);
@@ -287,10 +294,13 @@ const initEvents = () => {
         item.addEventListener('click', () => {
             if ( current === position || isAnimating ) return;
             navigate(position);
+
+            onmousemove = (e) => {
+                let x = e.clientX;
+                DOM.slideImages[position].style.filter = `grayscale(${x/innerWidth})`;
+            }
             
             setTimeout(()=>{
-                DOM.slideImages[position].classList.add("slide__img-grayscale");
-        
                 DOM.slideQuestion[position].style.opacity = '1';
         
             }, 2000);
@@ -337,20 +347,21 @@ preloadImages('.slide__img-inner').then( _ => {
 });
 
 
-DOM.slideRightImg[1].addEventListener('mouseover', ()=>{
+DOM.slideRightImg[0].addEventListener('mouseover', ()=>{
     DOM.slideQuestion[0].style.opacity = '-1';
     DOM.slideAns[0].style.opacity = '1';
 });
 
-DOM.slideRightImg[1].addEventListener('mouseout', ()=>{
+DOM.slideRightImg[0].addEventListener('mouseout', ()=>{
     DOM.slideQuestion[0].style.opacity = '1';
     DOM.slideAns[0].style.opacity = '-1';
 });
-
-
 onload = () => {
+    onmousemove = (e) => {
+        let x = e.clientX;
+        DOM.slideImages[0].style.filter = `grayscale(${x/innerWidth})`;
+    }
     setTimeout(()=>{
-        DOM.slideImages[0].classList.add("slide__img-grayscale");
         DOM.slideQuestion[0].style.opacity = '1';
 
     }, 2000);

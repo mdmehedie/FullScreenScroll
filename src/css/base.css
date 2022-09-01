@@ -451,11 +451,6 @@ a:focus-visible {
 	will-change: transform;
 }
 
-.slide__img-grayscale{
-	filter: grayscale(1);
-}
-
-
 .slide__content {
 	grid-area: 1 / 1 / -1 / -1;
 	display: grid;
