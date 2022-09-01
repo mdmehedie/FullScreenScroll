@@ -83,6 +83,12 @@ a:focus-visible {
   outline: 2px solid red;
 }
 
+.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .unbutton {
   font: inherit;
   cursor: pointer;
@@ -193,6 +199,20 @@ a:focus-visible {
   transform: scaleX(1);
 }
 
+.frame__nav-submenu {
+  display: none;
+}
+
+.frame__nav-submenu--item {
+  padding-left: 2rem;
+  list-style: none;
+}
+
+.frame__nav-submenu--item > li {
+  margin: 5px 0;
+  transition: all .5s ease-in-out;
+}
+
 .frame__back {
   opacity: 0;
   pointer-events: none;
@@ -242,37 +262,35 @@ a:focus-visible {
   transform: translate(-30%);
 }
 
-.slide__tri-img {
-  grid-template-columns: 100%;
+.slide__right-tri {
   display: grid;
 }
 
 .slide__right-img {
-  height: 100px;
-  width: 130px;
-  box-shadow: 2px -2x 0 0 #0000000f;
+  height: 150px;
+  width: 180px;
   box-shadow: none;
   cursor: pointer;
-  background-color: #fff;
   background-position: 50%;
   background-size: cover;
   border-radius: 2px;
-  margin: 10px;
-  padding: 5px;
+  margin: 1.5rem;
   transition: all .3s;
 }
 
 .slide__right-img:hover {
-  transform: scale(1.1);
-  box-shadow: 4px -4px #fff6, 8px -8px #fff3, 12px -12px #fff3, 16px -16px #0000000f;
+  transition: all .8s;
+  transform: scale(1.1)translate(-15%, -20%);
+  box-shadow: 5px 5px #b4c4ff66, 10px 10px #b4c4ff33, 15px 15px #b4c4ff33, 20px 20px #0000000f;
 }
 
 .slide_question {
   z-index: 100;
-  place-self: end center;
+  place-self: end;
+  margin-bottom: 1.5rem;
+  margin-right: 2rem;
   font-size: 16px;
   position: absolute;
-  bottom: 7rem;
 }
 
 .slide__qaOpacity-part {

@@ -16,7 +16,8 @@ const DOM = {
     slides: [...document.querySelectorAll('.slide')],
     cursor: document.querySelector('.cursor'),
     backCtrl: document.querySelector('.frame__back'),
-    navigationItems: document.querySelectorAll('.frame__nav > .frame__nav-button'),
+    navigationItems: document.querySelectorAll('.frame__nav > .menu >.frame__nav-button'),
+    navigationSubmenu: document.querySelectorAll('.frame__nav > .menu > .frame__nav-submenu'),
     slideImages: document.querySelectorAll('.slide__img-inner'),
     slideQuestion: document.querySelectorAll(".slide__question-part"),
     slideAns: document.querySelectorAll(".slide__ans-part"),
@@ -48,8 +49,10 @@ const setCurrentSlide = position => {
 
     current = position;
     slidesArr[current].DOM.el.classList.add('slide--current');
-
+    console.log(DOM.navigationSubmenu[current]);
     DOM.navigationItems[current].classList.add('frame__nav-button--current');
+    DOM.navigationSubmenu[current].classList.remove('frame__nav-submenu');
+    // DOM.navigationSubmenu[current].classList.add('frame__nav-submenu--current');
     setTimeout(()=>{
         DOM.slideImages[current].classList.add("slide__img-grayscale");
 
@@ -57,6 +60,8 @@ const setCurrentSlide = position => {
 
     }, 2000);
 };
+
+
 
 const next = () => {
     const newPosition = current < totalSlides - 1 ? current + 1 : 0;
@@ -87,6 +92,10 @@ const navigate = newPosition => {
     // change navigation current class
     DOM.navigationItems[current].classList.remove('frame__nav-button--current');
     DOM.navigationItems[newPosition].classList.add('frame__nav-button--current');
+
+    
+    DOM.navigationSubmenu[current].classList.add('frame__nav-submenu');
+    DOM.navigationSubmenu[newPosition].classList.remove('frame__nav-submenu');
     
     // navigation direction
     const direction = current < newPosition ? current === 0 && newPosition === totalSlides - 1 ? 'prev' : 'next' : current === totalSlides - 1 && newPosition === 0 ? 'next' : 'prev';
@@ -327,7 +336,6 @@ preloadImages('.slide__img-inner').then( _ => {
 	document.body.classList.remove('loading');
 });
 
-console.log(DOM.slideRightImg);
 
 DOM.slideRightImg[1].addEventListener('mouseover', ()=>{
     DOM.slideQuestion[0].style.opacity = '-1';

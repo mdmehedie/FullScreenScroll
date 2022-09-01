@@ -9,6 +9,7 @@
 		<meta name="author" content="Codrops">
 		<link rel="shortcut icon" href="/favicon.824cf0c5.ico">
 		<link rel="stylesheet" href="https://use.typekit.net/zns7sax.css">
+		<link rel="stylesheet" type="text/css" href="/index.0898f127.css">
 		<link rel="stylesheet" type="text/css" href="/index.d046a61c.css">
 		<script>document.documentElement.className = "js";
 var supportsCssVars = function() {
@@ -23,17 +24,62 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 	<body class="loading">
 		<main>
 			<div class="frame">
-				<div class="frame__title"> 
+				<!-- <div class="frame__title"> 
 					<a class="frame__title-prev" href="https://tympanus.net/Development/ImageToContent/">Previous demo</a>
 					<h1 class="frame__title-main">Fullscreen Scrolling Slideshow</h1> 
 					<a aria-label="Back to the article" class="frame__title-back" href="https://tympanus.net/codrops/?p=64521"><span>&rarr;</span></a> 
-				</div>
+				</div> -->
 				<nav class="frame__nav">
-					<button class="frame__nav-button unbutton">Stronger</button>
-					<button class="frame__nav-button unbutton">No choice</button>
-					<button class="frame__nav-button unbutton">Owned no longer</button>
-					<button class="frame__nav-button unbutton">Assert control</button>
-					<button class="frame__nav-button unbutton">Cold &amp; detached</button>
+					<ul class="menu">
+						<li class="frame__nav-button unbutton">Stronger</li>
+						<li class="frame__nav-submenu">
+							<ul class="frame__nav-submenu--item">
+								<li>submenu 1</li>
+								<li>submenu 2</li>
+								<li>submenu 3</li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="menu">
+						<li class="frame__nav-button unbutton">No choice</li>
+						<li class="frame__nav-submenu">
+							<ul class="frame__nav-submenu--item">
+								<li>submenu 1</li>
+								<li>submenu 2</li>
+								<li>submenu 3</li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="menu">
+						<li class="frame__nav-button unbutton">Owned no longer</li>
+						<li class="frame__nav-submenu">
+							<ul class="frame__nav-submenu--item">
+								<li>submenu 1</li>
+								<li>submenu 2</li>
+								<li>submenu 3</li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="menu">
+						<li class="frame__nav-button unbutton">Assert control</li>
+						<li class="frame__nav-submenu">
+							<ul class="frame__nav-submenu--item">
+								<li>submenu 1</li>
+								<li>submenu 2</li>
+								<li>submenu 3</li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="menu">
+						<li class="frame__nav-button unbutton">Cold &amp; detached</li>
+						<li class="frame__nav-submenu">
+							<ul class="frame__nav-submenu--item">
+								<li>submenu 1</li>
+								<li>submenu 2</li>
+								<li>submenu 3</li>
+							</ul>
+						</li>
+					</ul>
 				</nav>
 				<button class="frame__back unbutton">
 					<span data-splitting="">&larr; Go back</span>
@@ -42,17 +88,137 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 			</div>
 			<div class="slides">
 				<div class="slide">
+					<!-- <div class="grid grid--effect-vega">
+						<a href="#" class="grid__item grid__item--c1">
+							<div class="stack">
+								<div class="stack__deco"></div>
+								<div class="stack__deco"></div>
+								<div class="stack__deco"></div>
+								<div class="stack__deco"></div>
+								<div class="stack__figure">
+									<img class="stack__img" src="img/1-h.png" alt="Image"/>
+								</div>
+							</div>
+						</a>
+						<a href="#" class="grid__item grid__item--c2">
+							<div class="stack">
+								<div class="stack__deco"></div>
+								<div class="stack__deco"></div>
+								<div class="stack__deco"></div>
+								<div class="stack__deco"></div>
+								<div class="stack__figure">
+									<img class="stack__img" src="img/2-h.png" alt="Image"/>
+								</div>
+							</div>
+						</a>
+						<a href="#" class="grid__item grid__item--c3">
+							<div class="stack">
+								<div class="stack__deco"></div>
+								<div class="stack__deco"></div>
+								<div class="stack__deco"></div>
+								<div class="stack__deco"></div>
+								<div class="stack__figure">
+									<img class="stack__img" src="img/3-h.png" alt="Image"/>
+								</div>
+							</div>
+						</a>
+					</div> -->
 					<div class="slide__inner">
 						<div class="slide__right">
+							<img src="/1-h.7556b56a.png" class="slide__right-img" alt="">
+							<div class="slide__right-tri">
+								<img src="/2-h.ddae0de5.png" class="slide__right-img" alt="">
+								<img src="/3-h.9a78a99b.png" class="slide__right-img" alt="">
+							</div>
+
+							<!-- <div class="slide__right-images">
+								<img src="./img/1-h.png" class="slide__right-img" alt="">
+								<div class="stack stack-1"></div>
+								<div class="stack stack-2"></div>
+								<div class="stack stack-3"></div>
+								<div class="stack stack-4"></div>
+							</div>
+							<div class="slide__right-images">
+								<img src="./img/2-h.png" class="slide__right-img" alt="">
+								<div class="stack stack-1"></div>
+								<div class="stack stack-2"></div>
+								<div class="stack stack-3"></div>
+								<div class="stack stack-4"></div>
+							</div>
+							<div class="slide__right-images">
+								<img src="./img/3-h.png" class="slide__right-img" alt="">
+								<div class="stack stack-1"></div>
+								<div class="stack stack-2"></div>
+								<div class="stack stack-3"></div>
+								<div class="stack stack-4"></div>
+							</div>
+							<div class="slide__right-images">
+								<img src="./img/sm-1.jpg" class="slide__right-img" alt="">
+								<div class="stack stack-1"></div>
+								<div class="stack stack-2"></div>
+								<div class="stack stack-3"></div>
+								<div class="stack stack-4"></div>
+							</div> -->
+							
+						</div>
+
+						<!-- <div class="slide__right">
+							<a href="#" class="grid__item grid__item--c1">
+								<div class="stack">
+									<div class="stack__deco"></div>
+									<div class="stack__deco"></div>
+									<div class="stack__deco"></div>
+									<div class="stack__deco"></div>
+									<div class="stack__figure">
+										<img class="stack__img" src="img/1-h.png" alt="Image"/>
+									</div>
+								</div>
+							</a>
+							<a href="#" class="grid__item grid__item--c2">
+								<div class="stack">
+									<div class="stack__deco"></div>
+									<div class="stack__deco"></div>
+									<div class="stack__deco"></div>
+									<div class="stack__deco"></div>
+									<div class="stack__figure">
+										<img class="stack__img" src="img/2-h.png" alt="Image"/>
+									</div>
+								</div>
+							</a>
+							<a href="#" class="grid__item grid__item--c3">
+								<div class="stack">
+									<div class="stack__deco"></div>
+									<div class="stack__deco"></div>
+									<div class="stack__deco"></div>
+									<div class="stack__deco"></div>
+									<div class="stack__figure">
+										<img class="stack__img" src="img/3-h.png" alt="Image"/>
+									</div>
+								</div>
+							</a>
+							
+							<a href="#" class="grid__item grid__item--c4">
+								<div class="stack">
+									<div class="stack__deco"></div>
+									<div class="stack__deco"></div>
+									<div class="stack__deco"></div>
+									<div class="stack__deco"></div>
+									<div class="stack__figure">
+										<img class="stack__img" src="img/1-h.png" alt="Image"/>
+									</div>
+								</div>
+							</a>
+
 							<div class="slide__tri-img">
-								<img src="/sm-1.53d4e3e8.jpg" class="slide__right-img" alt="">
-								<img src="/sm-2.a3c9589c.jpg" class="slide__right-img" alt="">
-								<img src="/sm-3.e4a99485.jpg" class="slide__right-img" alt="">
+								<img src="./img/sm-1.jpg" class="slide__right-img" alt="">
+								<img id="images-2" src="./img/sm-2.jpg" class="slide__right-img" alt="" >
+								<img src="./img/sm-3.jpg" class="slide__right-img" alt="">
 							</div>
 							<div>
-								<img src="/sm-4.2b921110.jpg" class="slide__right-img" alt="">
+								<img src="./img/sm-4.jpg" class="slide__right-img" alt="">
 							</div>
-						</div>
+						</div> -->
+						
 
 						<div class="slide_question">
 							<div class="slide__question-part">Q: Is your software fast enough?</div>
@@ -68,9 +234,9 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 					</div>
 				</div>
 				<div class="slide">
-					<div class="slide__inner">
 						<div class="slide_question">
-							<span>Q: Is your software good enough? <br>  A: Our software is much better</span>
+							<div class="slide__question-part">Q: Is your software fast enough?</div>
+							<div class="slide__ans-part">A: Our software is much faster</div>
 						</div>
 						<div class="slide__content">
 							<div class="slide__content-img" style="background-image: url(&quot;2.cccf08ef.jpg&quot;)"></div>
@@ -83,7 +249,8 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 				<div class="slide">
 					<div class="slide__inner">
 						<div class="slide_question">
-							<span>Q: Is your software featured? <br> A: Our software is much more featured</span>
+							<div class="slide__question-part">Q: Is your software fast enough?</div>
+							<div class="slide__ans-part">A: Our software is much faster</div>
 						</div>
 						<div class="slide__content">
 							<div class="slide__content-img" style="background-image: url(&quot;3.3ef41889.jpg&quot;)"></div>
@@ -96,7 +263,8 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 				<div class="slide">
 					<div class="slide__inner">
 						<div class="slide_question">
-							<span>Q: Is your software interactive enough? <br> A: Our software is much more interactive</span>
+							<div class="slide__question-part">Q: Is your software fast enough?</div>
+							<div class="slide__ans-part">A: Our software is much faster</div>
 						</div>
 						<div class="slide__content">
 							<div class="slide__content-img" style="background-image: url(&quot;4.0e5501ba.jpg&quot;)"></div>
@@ -109,7 +277,8 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 				<div class="slide">
 					<div class="slide__inner">
 						<div class="slide_question">
-							<span>Q: Is your software working on all platforms <br> A: Our software is working on all platforms</span>
+							<div class="slide__question-part">Q: Is your software fast enough?</div>
+							<div class="slide__ans-part">A: Our software is much faster</div>
 						</div>
 						<div class="slide__content">
 							<div class="slide__content-img" style="background-image: url(&quot;5.f63eb06a.jpg&quot;)"></div>
@@ -119,12 +288,21 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 						<div class="slide__img"><div class="slide__img-inner" style="background-image: url(&quot;5.f63eb06a.jpg&quot;)"></div></div>
 					</div>
 				</div>
-			</div>
+			
 			<div class="cursor">
 				<span class="cursor__text" data-splitting="">+ Discover more</span>
 			</div>
 		</main>
 		<script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>
 		<script src="/index.739bf03c.js" defer=""></script>
+		<script src="/index.0ecf8fcc.js"></script>
+		<script src="/index.18dbc454.js" defer=""></script>
+		<script>(function() {
+    [].slice.call(document.querySelectorAll(".grid--effect-vega > .grid__item")).forEach(function(stackEl) {
+        new VegaFx(stackEl);
+    });
+})();
+
+</script>
 	</body>
 </html>
