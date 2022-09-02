@@ -406,6 +406,7 @@ a:focus-visible {
 	align-items: center;
 	margin-top: 2rem;
 	margin-right: 3rem;
+	transition: 1s;
 }
 .slide__right-tri{
 	display: grid;
@@ -418,7 +419,6 @@ a:focus-visible {
 	margin: 1.5rem;
 	border-radius: 2px;
   	box-shadow: none;
-  	transition: 0.3s;
   	cursor: pointer;
 }
 .slide__right-img:hover {
@@ -429,28 +429,25 @@ a:focus-visible {
 	  15px 15px 0px 0px rgba(180, 196, 255, 0.2),
 	  20px 20px 0px 0px rgba(0, 0, 0, 0.06);
   }
-
-.slide_question{
+.slide__question-part{
 	z-index: 100;
     position: absolute;
 	justify-self: end;
-	align-self: end;
 	font-size: 16px;
-	margin-bottom: 1.5rem;
+	margin-top: 1.5rem;
 	margin-right: 2rem;
-
-}
-.slide__qaOpacity-part{
-	opacity: 1;
-}
-.slide__question-part{
-	opacity: -1;
 	transition: 0.5s;
 }
 .slide__ans-part{
+	z-index: 100;
+    position: absolute;
+	justify-self: end;
+	font-size: 16px;
+	margin-bottom: 1.5rem;
+	margin-right: 2rem;
 	transform: translate(0, -100%);
-	opacity: -1;
 	transition: 0.5s;
+	align-self: end;
 }
 
 .slide__inner {

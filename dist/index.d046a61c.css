@@ -287,6 +287,7 @@ a:focus-visible {
   align-items: center;
   margin-top: 2rem;
   margin-right: 3rem;
+  transition: all 1s;
   display: flex;
   position: absolute;
 }
@@ -304,7 +305,6 @@ a:focus-visible {
   background-size: cover;
   border-radius: 2px;
   margin: 1.5rem;
-  transition: all .3s;
 }
 
 .slide__right-img:hover {
@@ -313,27 +313,24 @@ a:focus-visible {
   box-shadow: 5px 5px #b4c4ff66, 10px 10px #b4c4ff33, 15px 15px #b4c4ff33, 20px 20px #0000000f;
 }
 
-.slide_question {
+.slide__question-part {
+  z-index: 100;
+  justify-self: end;
+  margin-top: 1.5rem;
+  margin-right: 2rem;
+  font-size: 16px;
+  transition: all .5s;
+  position: absolute;
+}
+
+.slide__ans-part {
   z-index: 100;
   place-self: end;
   margin-bottom: 1.5rem;
   margin-right: 2rem;
   font-size: 16px;
+  transition: all .5s;
   position: absolute;
-}
-
-.slide__qaOpacity-part {
-  opacity: 1;
-}
-
-.slide__question-part {
-  opacity: -1;
-  transition: all .5s;
-}
-
-.slide__ans-part {
-  opacity: -1;
-  transition: all .5s;
   transform: translate(0, -100%);
 }
 

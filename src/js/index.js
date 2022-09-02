@@ -20,8 +20,6 @@ const DOM = {
     imagePosition : document.querySelectorAll('.image__position-item'),
     slideImages: document.querySelectorAll('.slide__img-inner'),
     slideRightImages: document.querySelectorAll('.slide__right'),
-    slideQuestion: document.querySelectorAll(".slide__question-part"),
-    slideAns: document.querySelectorAll(".slide__ans-part"),
     slideRightImg: document.querySelectorAll(".slide__right-img"),
 };
 // cursor text chars
@@ -57,10 +55,6 @@ const setCurrentSlide = position => {
         DOM.slideImages[current].style.filter = `grayscale(${x/innerWidth})`;
     }
 
-    setTimeout(()=>{
-        DOM.slideQuestion[current].style.opacity = '1';
-
-    }, 2000);
 };
 
 
@@ -72,11 +66,6 @@ const next = () => {
         let x = e.clientX;
         DOM.slideImages[newPosition].style.filter = `grayscale(${x/innerWidth})`;
     }
-
-    setTimeout(()=>{
-        DOM.slideQuestion[newPosition].style.opacity = '1';
-
-    }, 2000);
     
 };
 
@@ -87,10 +76,6 @@ const prev = () => {
         let x = e.clientX;
         DOM.slideImages[newPosition].style.filter = `grayscale(${x/innerWidth})`;
     }
-    setTimeout(()=>{
-        DOM.slideQuestion[newPosition].style.opacity = '1';
-
-    }, 2000);
 };
 
 const navigate = newPosition => {
@@ -295,11 +280,6 @@ const initEvents = () => {
                 let x = e.clientX;
                 DOM.slideImages[position].style.filter = `grayscale(${x/innerWidth})`;
             }
-            
-            setTimeout(()=>{
-                DOM.slideQuestion[position].style.opacity = '1';
-        
-            }, 2000);
         });
     });
 
@@ -342,25 +322,11 @@ preloadImages('.slide__img-inner').then( _ => {
 	document.body.classList.remove('loading');
 });
 
-
-DOM.slideRightImg[0].addEventListener('mouseover', ()=>{
-    DOM.slideQuestion[0].style.opacity = '-1';
-    DOM.slideAns[0].style.opacity = '1';
-});
-
-DOM.slideRightImg[0].addEventListener('mouseout', ()=>{
-    DOM.slideQuestion[0].style.opacity = '1';
-    DOM.slideAns[0].style.opacity = '-1';
-});
 onload = () => {
     onmousemove = (e) => {
         let x = e.clientX;
         DOM.slideImages[0].style.filter = `grayscale(${x/innerWidth})`;
     }
-    setTimeout(()=>{
-        DOM.slideQuestion[0].style.opacity = '1';
-
-    }, 2000);
 };
 
 DOM.imagePosition.forEach((text, index) => {
