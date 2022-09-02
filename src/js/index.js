@@ -17,9 +17,9 @@ const DOM = {
     cursor: document.querySelector('.cursor'),
     backCtrl: document.querySelector('.frame__back'),
     navigationItems: document.querySelectorAll('.frame__nav  >.frame__nav-button'),
-    imagePosition : document.querySelectorAll('.image__position-item'),
+    imagePosition : document.querySelectorAll('.image__position'),
     slideImages: document.querySelectorAll('.slide__img-inner'),
-    slideRightImages: document.querySelectorAll('.slide__right'),
+    slideRightImages: document.querySelectorAll('.grid'),
     slideRightImg: document.querySelectorAll(".slide__right-img"),
 };
 // cursor text chars
@@ -54,6 +54,22 @@ const setCurrentSlide = position => {
         let x = e.clientX;
         DOM.slideImages[current].style.filter = `grayscale(${x/innerWidth})`;
     }
+    
+    let imagePositionChil = DOM.imagePosition[current].children
+    for (const key in imagePositionChil) {
+        if (imagePositionChil.hasOwnProperty.call(imagePositionChil, key)) {
+            const element = imagePositionChil[key];
+            let x = 0;
+            element.addEventListener('mouseover', ()=>{
+                x = key;
+                DOM.slideRightImages[current].style.transform = `translate(0, ${x}0%)`;
+            })
+            element.addEventListener('mouseout', ()=>{
+                x = key;
+                DOM.slideRightImages[current].style.transform = `translate(0, ${x}0%)`;
+            })
+        }
+    }
 
 };
 
@@ -62,20 +78,11 @@ const setCurrentSlide = position => {
 const next = () => {
     const newPosition = current < totalSlides - 1 ? current + 1 : 0;
     navigate(newPosition);
-    onmousemove = (e) => {
-        let x = e.clientX;
-        DOM.slideImages[newPosition].style.filter = `grayscale(${x/innerWidth})`;
-    }
-    
 };
 
 const prev = () => {
     const newPosition = current > 0 ? current - 1 : totalSlides - 1;
     navigate(newPosition);
-    onmousemove = (e) => {
-        let x = e.clientX;
-        DOM.slideImages[newPosition].style.filter = `grayscale(${x/innerWidth})`;
-    }
 };
 
 const navigate = newPosition => {
@@ -91,6 +98,31 @@ const navigate = newPosition => {
     const currentSlide = slidesArr[current];
     current = newPosition;
     const upcomingSlide = slidesArr[current];
+    
+    
+    onmousemove = (e) => {
+        let x = e.clientX;
+        DOM.slideImages[current].style.filter = `grayscale(${x/innerWidth})`;
+    }
+
+    
+
+    let imagePositionChil = DOM.imagePosition[current].children
+    for (const key in imagePositionChil) {
+        if (imagePositionChil.hasOwnProperty.call(imagePositionChil, key)) {
+            const element = imagePositionChil[key];
+            let x = 0;
+            element.addEventListener('mouseover', ()=>{
+                x = key;
+                DOM.slideRightImages[current].style.transform = `translate(0, ${x}0%)`;
+            })
+            element.addEventListener('mouseout', ()=>{
+                x = key;
+                DOM.slideRightImages[current].style.transform = `translate(0, ${x}0%)`;
+            })
+        }
+    }
+
 
     gsap.timeline({
         defaults: {
@@ -329,16 +361,3 @@ onload = () => {
     }
 };
 
-DOM.imagePosition.forEach((text, index) => {
-    let x = 0;
-    text.addEventListener('mouseover', ()=>{
-        x = index;
-        DOM.slideRightImages[0].style.transform = `translate(0, ${x}0%)`;
-    })
-    text.addEventListener('mouseout', ()=>{
-        x = index;
-        DOM.slideRightImages[0].style.transform = `translate(0, ${x}0%)`;
-    })
-    
-    
-})
