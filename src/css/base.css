@@ -268,21 +268,123 @@ a:focus-visible {
 .image__position{
     align-self: end;
     justify-self: end;
-	padding: .7rem 2rem;
-	border-radius: 5px;
-	background-color: rgba(255, 255, 255, 0.1);
-	color: #d1d1d1;
+	color: var(--color-link);
 	width: 240px;
+	display: grid;
+	grid-gap: .5rem;
 }
 
 .image__position-item{
-	padding: .5rem 0;
 	cursor: pointer;
 }
 .image__position-item:hover{
-	color: rgb(255, 255, 255);
+	color: var(--color-link-hover);
 	
 }
+.grid {
+	z-index: 100;
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 0 2em;
+	perspective: 800px;
+	perspective-origin: 50% 100%;
+	transition: 1s;
+}
+
+.grid__item {
+	position: relative;
+	flex: none;
+	width: 200px;
+	margin: 1em;
+	cursor: default;
+	transform-style: preserve-3d;
+}
+
+.grid__item:hover,
+.grid__item:focus {
+	outline: none;
+}
+
+.grid__item--c1,
+.grid__item--c1:hover,
+.grid__item--c1:focus {
+	color: #52649e;
+}
+
+.grid__item--c2,
+.grid__item--c2:hover,
+.grid__item--c2:focus {
+	color: #ee7074;
+}
+
+.grid__item--c3,
+.grid__item--c3:hover,
+.grid__item--c3:focus {
+	color: #f7f295;
+}
+
+.stack {
+	position: relative;
+	width: 100%;
+	height: 200px;
+	transform-style: preserve-3d;
+}
+
+.stack__deco {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: currentColor;
+	transform-origin: 50% 100%;
+}
+
+.stack__deco:first-child {
+	opacity: 0.2;
+}
+
+.stack__deco:nth-child(2) {
+	opacity: 0.4;
+}
+
+.stack__deco:nth-child(3) {
+	opacity: 0.6;
+}
+
+.stack__deco:nth-child(4) {
+	opacity: 0.8;
+}
+
+.stack__figure {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	transform-origin: 50% 100%;
+}
+
+.stack__img {
+	position: relative;
+	display: block;
+	flex: none;
+}
+
+/* Individual effects */
+
+/* Vega */
+.grid--effect-vega .column {
+	opacity: 1;
+}
+
 .stack__img {
 	position: relative;
 	display: block;
@@ -292,22 +394,20 @@ a:focus-visible {
 .slide__spacification{
 	top: 10%;
 	left: 2%;
-	background-color: rgba(255, 255, 255, 0.1);
-	color: #d1d1d1;
+	color: var(--color-link);
 	position: absolute;
 	z-index: 100;
-	padding: .7rem 2rem;
-	border-radius: 5px;
 }
 .slide__spacification > ul{
 	list-style: none;
 	padding: 0;
 }
 .slide__spacification > ul > li{
-	padding: .5rem 0;
+	padding: .3rem 0;
 }
 .slide__spacification > ul > li:hover{
-	color: #fff;
+	color: var(--color-link-hover);
+	cursor: pointer;
 	
 }
 /* .slide__right{

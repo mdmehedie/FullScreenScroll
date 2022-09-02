@@ -37,6 +37,8 @@
 		};
 		this.DOM.stack.addEventListener('mouseenter', this._mouseenterFn);
 		this.DOM.stack.addEventListener('mouseleave', this._mouseleaveFn);
+
+        console.log(this.DOM.stack);
 	};
 	VegaFx.prototype._in = function() {
 		var self = this;
