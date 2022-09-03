@@ -293,6 +293,7 @@ a:focus-visible {
 	perspective: 800px;
 	perspective-origin: 50% 100%;
 	transition: 1s;
+	margin-top: 2rem;
 }
 
 .grid__item {
@@ -381,7 +382,7 @@ a:focus-visible {
 /* Individual effects */
 
 /* Vega */
-.grid--effect-vega .column {
+.grid--effect-vega {
 	opacity: 1;
 }
 
@@ -410,16 +411,6 @@ a:focus-visible {
 	cursor: pointer;
 	
 }
-/* .slide__right{
-	z-index: 100;
-    position: absolute;
-	justify-self: end;
-	display: flex;
-	align-items: center;
-	margin-top: 2rem;
-	margin-right: 3rem;
-	transition: 1s;
-} */
 .slide__right-tri{
 	display: grid;
 }

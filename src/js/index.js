@@ -35,9 +35,8 @@ DOM.slides.forEach(slide => {
     slidesArr.push(new Slide(slide));
 });
 
-// current slide position
+
 let current = -1;
-// check if animation is in progress
 let isAnimating = false;
 
 
@@ -60,7 +59,8 @@ const setCurrentSlide = position => {
         if (imagePositionChil.hasOwnProperty.call(imagePositionChil, key)) {
             const element = imagePositionChil[key];
             let x = 0;
-            element.addEventListener('mouseover', ()=>{
+            let a = -1, b =-1;
+            element.addEventListener('mouseover', (e)=>{
                 x = key;
                 DOM.slideRightImages[current].style.transform = `translate(0, ${x}0%)`;
             })
@@ -68,6 +68,7 @@ const setCurrentSlide = position => {
                 x = key;
                 DOM.slideRightImages[current].style.transform = `translate(0, ${x}0%)`;
             })
+            
         }
     }
 

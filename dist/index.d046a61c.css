@@ -279,6 +279,7 @@ a:focus-visible {
   grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
   padding: 0 2em;
   transition: all 1s;
   display: grid;
@@ -361,7 +362,7 @@ a:focus-visible {
   position: relative;
 }
 
-.grid--effect-vega .column {
+.grid--effect-vega {
   opacity: 1;
 }
 
